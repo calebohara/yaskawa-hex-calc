@@ -27,7 +27,7 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center p-4">
+<body class="bg-white dark:bg-gray-900 min-h-screen flex flex-col items-center justify-start p-4 space-y-8">
 
     <!-- Main calculator card -->
     <div class="relative container bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 md:p-8 transition-colors">
@@ -130,6 +130,47 @@
                 <li>On iPhone, tap the share icon, then "Add to Home Screen".</li>
                 <li>On Android, look for "Add to Home Screen" in your browser's menu.</li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Drive Node Address Converter Section -->
+    <div class="container bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 md:p-8 transition-colors">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Drive Node Address Converter</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm md:text-base mb-6">
+            Convert a decimal node address (0-127) to its hexadecimal equivalent for VFD configuration.
+        </p>
+        <div class="input-group mb-6">
+            <label for="node-address-decimal" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 transition-colors">
+                Enter Decimal Node Address (0 - 127)
+            </label>
+            <input
+                type="number"
+                id="node-address-decimal"
+                class="block w-full rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                placeholder="e.g., 34"
+                min="0"
+                max="127"
+            />
+        </div>
+        <div class="output-group mb-6">
+            <label for="node-address-hex" class="block text-gray-700 dark:text-gray-300 font-medium mb-2 transition-colors">
+                Hex Node Address
+            </label>
+            <input
+                type="text"
+                id="node-address-hex"
+                class="block w-full rounded-lg bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 font-mono text-center md:text-left font-bold transition-colors"
+                readonly
+                placeholder="00"
+            />
+        </div>
+        <div class="mt-6 flex justify-center space-x-4">
+            <button
+                id="copy-node-address-btn"
+                class="bg-blue-500 dark:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors"
+            >
+                Copy Hex Address
+            </button>
         </div>
     </div>
 
