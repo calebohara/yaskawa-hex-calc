@@ -34,12 +34,12 @@
         <!-- Theme Toggle Button -->
         <button id="theme-toggle-btn" class="absolute top-4 right-4 p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <!-- Sun Icon (Light Mode) -->
-            <svg id="sun-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 1.464a1 1 0 01.707.293l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 01.707-1.707zM17 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-2.464 4.536a1 1 0 01-.707.293l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 01-.707 1.707zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM5.464 15.464a1 1 0 01-.707-.293l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 01-.707 1.707zM3 10a1 1 0 011-1h1a1 1 0 110 2H4a1 1 0 01-1-1zM4.464 5.464a1 1 0 01.707-.293l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 01.707-1.707zM10 13a3 3 0 110-6 3 3 0 010 6z" clip-rule="evenodd" fill-rule="evenodd"></path>
+            <svg id="sun-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
             <!-- Moon Icon (Dark Mode) -->
-            <svg id="moon-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.293 13.593A5.996 5.996 0 0110 16a6 6 0 01-6-6c0-1.282.4-2.463 1.092-3.414a7.994 7.994 0 00.179 9.389A7.995 7.995 0 0010 18a7.994 7.994 0 007.293-4.407z"></path>
+            <svg id="moon-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5M10.5 18.75L4.5 12.75l6-6M18.75 18.75L12.75 12.75l6-6M19.5 7.5L12.75 12.75" />
             </svg>
         </button>
 
@@ -135,8 +135,8 @@
 
     <!-- Drive Node Address Converter Section -->
     <div class="container bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 md:p-8 transition-colors">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Drive Node Address Converter</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm md:text-base mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 transition-colors">Drive Node Address Converter</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm md:text-base mb-6 transition-colors">
             Convert a decimal node address (0-127) to its hexadecimal equivalent for VFD configuration.
         </p>
         <div class="input-group mb-6">
@@ -150,7 +150,6 @@
                 placeholder="e.g., 34"
                 min="0"
                 max="127"
-                oninput="convertNodeAddress()"
             />
         </div>
         <div class="output-group mb-6">
