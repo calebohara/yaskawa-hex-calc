@@ -9,6 +9,11 @@ const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
+// Get references for the new Drive Node Address converter
+const nodeAddressDecimalInput = document.getElementById('node-address-decimal');
+const nodeAddressHexOutput = document.getElementById('node-address-hex');
+const copyNodeAddressBtn = document.getElementById('copy-node-address-btn');
+
 // Function to perform the conversion and update the display
 const convertDecimalToHex = () => {
     const decimalValue = parseInt(decimalInput.value, 10);
@@ -30,6 +35,20 @@ const convertDecimalToHex = () => {
     fullHexOutput.value = fullHex;
     highBitsOutput.value = highBits;
     lowBitsOutput.value = lowBits;
+};
+
+// Function to convert the Drive Node Address
+const convertNodeAddress = () => {
+    const decimalValue = parseInt(nodeAddressDecimalInput.value, 10);
+
+    if (isNaN(decimalValue) || decimalValue < 0 || decimalValue > 127) {
+        nodeAddressHexOutput.value = '';
+        return;
+    }
+
+    let hexString = decimalValue.toString(16);
+    hexString = hexString.padStart(2, '0');
+    nodeAddressHexOutput.value = hexString.toUpperCase();
 };
 
 // Function to copy a single output value to the clipboard
@@ -72,7 +91,7 @@ if (savedTheme) {
     setTheme('light');
 }
 
-// Add event listeners
+// Add event listeners for the main converter
 decimalInput.addEventListener('input', convertDecimalToHex);
 copyFullHexBtn.addEventListener('click', () => copyOutput('full-hex-output', copyFullHexBtn));
 resetButton.addEventListener('click', () => {
@@ -81,6 +100,12 @@ resetButton.addEventListener('click', () => {
     highBitsOutput.value = '';
     lowBitsOutput.value = '';
 });
+
+// Add event listeners for the Drive Node Address converter
+nodeAddressDecimalInput.addEventListener('input', convertNodeAddress);
+copyNodeAddressBtn.addEventListener('click', () => copyOutput('node-address-hex', copyNodeAddressBtn));
+
+// Add event listener for the theme toggle
 themeToggleBtn.addEventListener('click', () => {
     const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
